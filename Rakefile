@@ -8,7 +8,7 @@ begin
     s.summary = "Generators which create tests using shoulda and machinist"
     s.email = "dave.hrycyszyn@headlondon.com"
     s.homepage = "http://github.com/futurechimp/shoulda_machinist_generator"
-    s.description = "Generators which create tests using shoulda and machinist"
+    s.description = "A superfork of shoulda_generator"
     s.authors = ["Dave Hrycyszyn", "Stuart Chinery"]
     s.files =  FileList["[A-Z]*", "{rails_generators,test}/**/*"]
   end
