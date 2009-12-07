@@ -19,7 +19,7 @@ class ShouldaModelGenerator < Rails::Generator::NamedBase
           :migration_name => "Create#{class_name.pluralize.gsub(/::/, '')}"
         }, :migration_file_name => "create_#{file_path.gsub(/\//, '_').pluralize}"
       end
-      
+
       m.template 'blueprints.rb', File.join('test', "blueprints.rb")
       m.blueprint_resources class_name
     end
@@ -39,13 +39,13 @@ class ShouldaModelGenerator < Rails::Generator::NamedBase
       opt.separator 'Options:'
       opt.on("--skip-timestamps",
              "Don't add timestamps to the migration file for this model") { |v| options[:skip_timestamps] = v }
-      opt.on("--skip-migration", 
+      opt.on("--skip-migration",
              "Don't generate a migration file for this model") { |v| options[:skip_migration] = v }
       opt.on("--skip-factory",
              "Don't generation a fixture file for this model") { |v| options[:skip_factory] = v}
     end
-    
-    #  This inserts the routing declarations into the engine's routes file. 
+
+    #  This inserts the routing declarations into the engine's routes file.
     #  Copied from Rails::Generator::Commands and modified to make it do what we want.
     #
     def blueprint_resources(class_name)
@@ -53,9 +53,9 @@ class ShouldaModelGenerator < Rails::Generator::NamedBase
       #
       sentinel = '# Model class blueprints'
       gsub_file File.join('test', 'blueprints.rb'), /(#{Regexp.escape(sentinel)})/mi do |match|
-        "\n#{match}\n#{class_name}.blueprint do\nend"
+        "\n#{match}\n#{class_name}.blueprint do\nend\n\n"
       end
-      
+
     end
 
 
@@ -68,3 +68,4 @@ class ShouldaModelGenerator < Rails::Generator::NamedBase
       File.open(path, File::RDWR|File::CREAT) { |file| file.write(content) }
     end
 end
+
