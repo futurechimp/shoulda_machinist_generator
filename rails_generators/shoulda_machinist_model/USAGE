@@ -10,11 +10,11 @@ Description:
     sketch out a few so you can start working with the model immediately.
 
     This generates a model class in app/models, a unit test in test/unit,
-    a test fixture in test/fixtures/singular_name.yml, and a migration in
+    adds a Machinist blueprint to test/blueprints.rb, and a migration in
     db/migrate.
 
 Examples:
-    `./script/generate shoulda_model account`
+    `./script/generate shoulda_machinist_model account`
 
         creates an Account model, test, factory, and migration:
             Model:      app/models/account.rb
@@ -22,6 +22,7 @@ Examples:
             Factory:    test/factories/account_factory.rb
             Migration:  db/migrate/XXX_add_accounts.rb
 
-    `./script/generate shoulda_model post title:string body:text published:boolean`
+    `./script/generate shoulda_machinist_model post title:string body:text published:boolean`
 
         creates a Post model with a string title, text body, and published flag.
+

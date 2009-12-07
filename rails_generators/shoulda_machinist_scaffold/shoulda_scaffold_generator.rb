@@ -3,21 +3,21 @@
 # Thank you Chad Fowler, Rich Kilmer, Jim Weirich and others.
 #++
 class ShouldaScaffoldGeneratorConfig
-  
+
   DEFAULT_TEMPLATING = 'erb'
   DEFAULT_FUNCTIONAL_TEST_STYLE = 'basic'
-  
+
   def initialize()
     @config = load_file(config_file)
-    
+
     @templating = @config[:templating] || DEFAULT_TEMPLATING
     @functional_test_style = @config[:functional_test_style] || DEFAULT_FUNCTIONAL_TEST_STYLE
   end
-  
+
   attr_reader :templating, :functional_test_style
-   
+
   private
-   
+
   def load_file(filename)
     begin
       YAML.load(File.read(filename)) if filename and File.exist?(filename)
@@ -27,14 +27,14 @@ class ShouldaScaffoldGeneratorConfig
       warn "Failed to load #{config_file_name} due to permissions problem."
     end or {}
   end
-  
+
   def config_file
      File.join(find_home, '.shoulda_generator')
   end
-  
+
   ##
   # Finds the user's home directory.
-  
+
   def find_home
     ['HOME', 'USERPROFILE'].each do |homekey|
       return ENV[homekey] if ENV[homekey]
@@ -73,9 +73,9 @@ class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
 
   def initialize(runtime_args, runtime_options = {})
     super
-    
+
     @configuration = ShouldaScaffoldGeneratorConfig.new
-    
+
     @controller_name = @name.pluralize
 
     base_name, @controller_class_path, @controller_file_path, @controller_class_nesting, @controller_class_nesting_depth = extract_modules(@controller_name)
@@ -143,7 +143,7 @@ class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
   protected
     # Override with your own usage banner.
     def banner
-      "Usage: #{$0} scaffold ModelName [field:type, field:type]"
+      "Usage: #{$0} shoulda_machinist_scaffold ModelName [field:type, field:type]"
     end
 
     def add_options!(opt)
@@ -153,7 +153,7 @@ class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
              "Don't add timestamps to the migration file for this model") { |v| options[:skip_timestamps] = v }
       opt.on("--skip-migration",
              "Don't generate a migration file for this model") { |v| options[:skip_migration] = v }
-      
+
      end
 
     def scaffold_views
@@ -164,3 +164,4 @@ class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
       class_name.demodulize
     end
 end
+
