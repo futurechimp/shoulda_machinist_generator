@@ -1,53 +1,27 @@
-require 'rubygems'
 require 'rake'
+require 'rake/testtask'
 
 begin
   require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "shoulda_machinist_generator"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "dave.hrycyszyn@headlondon.com"
-    gem.homepage = "http://github.com/futurechimp/shoulda_machinist_generator"
-    gem.authors = ["Dave Hrycyszyn"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
-end
-
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
-
-begin
-  require 'rcov/rcovtask'
-  Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/test_*.rb'
-    test.verbose = true
+  Jeweler::Tasks.new do |s|
+    s.name = "shoulda_machinist_generator"
+    s.summary = "Generators which create tests using shoulda and machinist"
+    s.email = "dave.hrycyszyn@headlondon.com"
+    s.homepage = "http://github.com/futurechimp/shoulda_machinist_generator"
+    s.description = "Generators which create tests using shoulda and machinist"
+    s.authors = ["Dave Hrycyszyn", "Stuart Chinery"]
+    s.files =  FileList["[A-Z]*", "{rails_generators,lib,test}/**/*"]
   end
 rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
-  end
+  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
 end
 
-task :test => :check_dependencies
+Rake::TestTask.new do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = false
+end
 
+desc 'Test by default'
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "shoulda_machinist_generator #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
