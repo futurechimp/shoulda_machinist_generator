@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{shoulda_machinist_generator}
-  s.version = "0.1.5"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dave Hrycyszyn", "Stuart Chinery"]
@@ -22,13 +22,13 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "rails_generators/shoulda_machinist_model/USAGE",
-     "rails_generators/shoulda_machinist_model/shoulda_model_generator.rb",
+     "rails_generators/shoulda_machinist_model/shoulda_machinist_model_generator.rb",
      "rails_generators/shoulda_machinist_model/templates/blueprints.rb",
      "rails_generators/shoulda_machinist_model/templates/migration.rb",
      "rails_generators/shoulda_machinist_model/templates/model.rb",
      "rails_generators/shoulda_machinist_model/templates/unit_test.rb",
      "rails_generators/shoulda_machinist_scaffold/USAGE",
-     "rails_generators/shoulda_machinist_scaffold/shoulda_scaffold_generator.rb",
+     "rails_generators/shoulda_machinist_scaffold/shoulda_machinist_scaffold_generator.rb",
      "rails_generators/shoulda_machinist_scaffold/templates/blueprint/ie.css",
      "rails_generators/shoulda_machinist_scaffold/templates/blueprint/print.css",
      "rails_generators/shoulda_machinist_scaffold/templates/blueprint/screen.css",
