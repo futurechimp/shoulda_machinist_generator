@@ -66,7 +66,6 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/futurechimp/shoulda_machinist_generator}
   s.rdoc_options = ["--charset=UTF-8"]
-  s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Generators which create tests using shoulda and machinist}
   s.test_files = [
