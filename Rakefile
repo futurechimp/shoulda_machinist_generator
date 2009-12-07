@@ -10,7 +10,7 @@ begin
     s.homepage = "http://github.com/futurechimp/shoulda_machinist_generator"
     s.description = "Generators which create tests using shoulda and machinist"
     s.authors = ["Dave Hrycyszyn", "Stuart Chinery"]
-    s.files =  FileList["[A-Z]*", "{rails_generators,lib,test}/**/*"]
+    s.files =  FileList["[A-Z]*", "{rails_generators,test}/**/*"]
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
