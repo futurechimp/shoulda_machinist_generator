@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{shoulda_machinist_generator}
-  s.version = "0.2.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dave Hrycyszyn", "Stuart Chinery"]
-  s.date = %q{2009-12-07}
+  s.date = %q{2009-12-08}
   s.description = %q{A superfork of shoulda_generator}
   s.email = %q{dave.hrycyszyn@headlondon.com}
   s.extra_rdoc_files = [

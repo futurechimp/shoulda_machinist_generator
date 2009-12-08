@@ -1,8 +1,8 @@
 #--
-# ShouldaScaffoldGeneratorConfig based on rubygems code.
+# ShouldaMachinistScaffoldGeneratorConfig based on rubygems code.
 # Thank you Chad Fowler, Rich Kilmer, Jim Weirich and others.
 #++
-class ShouldaScaffoldGeneratorConfig
+class ShouldaMachinistScaffoldGeneratorConfig
 
   DEFAULT_TEMPLATING = 'erb'
   DEFAULT_FUNCTIONAL_TEST_STYLE = 'basic'
@@ -56,7 +56,7 @@ class ShouldaScaffoldGeneratorConfig
   end
 end
 
-class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
+class ShouldaMachinistScaffoldGenerator < Rails::Generator::NamedBase
   default_options :skip_timestamps => false, :skip_migration => false, :skip_layout => true
 
   attr_reader   :controller_name,
@@ -74,7 +74,7 @@ class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
   def initialize(runtime_args, runtime_options = {})
     super
 
-    @configuration = ShouldaScaffoldGeneratorConfig.new
+    @configuration = ShouldaMachinistScaffoldGeneratorConfig.new
 
     @controller_name = @name.pluralize
 

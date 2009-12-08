@@ -1,4 +1,4 @@
-class ShouldaModelGenerator < Rails::Generator::NamedBase
+class ShouldaMachinistModelGenerator < Rails::Generator::NamedBase
   default_options :skip_timestamps => false, :skip_migration => false
 
   def manifest
