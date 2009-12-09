@@ -1,13 +1,13 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class <%= controller_class_name %>ControllerTest < ActionController::TestCase
-  
+
   context "The <%= controller_class_name %>Controller" do
-  	
+
   	setup do
   		@<%= file_name %> = <%= class_name %>.make
-  	end  
-  	
+  	end
+
 		context 'GET to index' do
 		  setup do
 		    get :index
@@ -52,7 +52,7 @@ class <%= controller_class_name %>ControllerTest < ActionController::TestCase
 		end
 
 		context 'GET to show' do
-		  setup do    
+		  setup do
 		    get :show, :id => @<%= file_name %>.to_param
 		  end
 		  should_respond_with :success
@@ -80,7 +80,7 @@ class <%= controller_class_name %>ControllerTest < ActionController::TestCase
         should_redirect_to("the show page") { <%= file_name %>_path(assigns(:<%= file_name %>))}
         should_assign_to :<%= file_name %>
       end
-      
+
 #      context "with invalid parameters" do
 #        setup do
 #          assert_no_difference("<%= class_name %>.count") do
@@ -94,14 +94,15 @@ class <%= controller_class_name %>ControllerTest < ActionController::TestCase
 #      end
 		end
 
-		context 'DELETE to destroy' do		  
+		context 'DELETE to destroy' do
 		  setup do
         assert_difference('<%= class_name %>.count', -1) do
           delete :destroy, :id => @<%= file_name %>.to_param
         end
       end
 
-      should_redirect_to '<%= table_name %>_path'
+      should_redirect_to ("the index page") { <%= table_name %>_path }
 		end
   end
 end
+
