@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{shoulda_machinist_generator}
-  s.version = "0.3.1"
+  s.version = "0.3.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dave Hrycyszyn", "Stuart Chinery"]
-  s.date = %q{2009-12-08}
+  s.date = %q{2009-12-09}
   s.description = %q{A superfork of shoulda_generator}
   s.email = %q{dave.hrycyszyn@headlondon.com}
   s.extra_rdoc_files = [
@@ -70,24 +70,24 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Generators which create tests using shoulda and machinist}
   s.test_files = [
-    "test/shoulda_macros/generator_macros.rb",
-     "test/test_helper.rb",
-     "test/rails_generators/shoulda_model_generator_test.rb",
-     "test/fixtures/about_yml_plugins/bad_about_yml/init.rb",
+    "test/test_helper.rb",
+     "test/fixtures/environment_with_constant.rb",
      "test/fixtures/about_yml_plugins/plugin_without_about_yml/init.rb",
-     "test/fixtures/eager/zoo/reptile_house.rb",
-     "test/fixtures/eager/zoo.rb",
-     "test/fixtures/lib/generators/working/working_generator.rb",
+     "test/fixtures/about_yml_plugins/bad_about_yml/init.rb",
      "test/fixtures/lib/generators/missing_class/missing_class_generator.rb",
-     "test/fixtures/plugins/default/gemlike/init.rb",
-     "test/fixtures/plugins/default/gemlike/rails/init.rb",
-     "test/fixtures/plugins/default/gemlike/lib/gemlike.rb",
+     "test/fixtures/lib/generators/working/working_generator.rb",
      "test/fixtures/plugins/default/stubby/init.rb",
      "test/fixtures/plugins/default/stubby/lib/stubby_mixin.rb",
      "test/fixtures/plugins/default/stubby/generators/stubby_generator/stubby_generator.rb",
+     "test/fixtures/plugins/default/gemlike/init.rb",
+     "test/fixtures/plugins/default/gemlike/lib/gemlike.rb",
+     "test/fixtures/plugins/default/gemlike/rails/init.rb",
      "test/fixtures/plugins/default/plugin_with_no_lib_dir/init.rb",
      "test/fixtures/plugins/alternate/a/generators/a_generator/a_generator.rb",
-     "test/fixtures/environment_with_constant.rb",
+     "test/fixtures/eager/zoo/reptile_house.rb",
+     "test/fixtures/eager/zoo.rb",
+     "test/rails_generators/shoulda_model_generator_test.rb",
+     "test/shoulda_macros/generator_macros.rb",
      "test/stolen_from_railties.rb"
   ]
 
