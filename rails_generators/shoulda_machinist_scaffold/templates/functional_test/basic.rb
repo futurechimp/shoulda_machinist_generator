@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../test_helper'
+require 'test_helper'
 
 class <%= controller_class_name %>ControllerTest < ActionController::TestCase
 
