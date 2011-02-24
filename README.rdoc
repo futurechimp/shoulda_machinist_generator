@@ -8,7 +8,19 @@ It's used in basically the same way as shoulda_generator, i.e.:
  script/generate shoulda_machinist_scaffold post title:string body:text published:boolean
  script/generate shoulda_machinist_scaffold purchase order_id:integer amount:decimal
 
+
 In the interest of simplicity, there is no option to use haml (only erb templates are included).  It'd be nice to support alternate template types, so if anyone wants to fork the gem we would happily say yes to any pull requests slapping this functionality in.
+
+We've also added an admin system generator, which you can use like so:
+
+ script/generate shoulda_machinist_admin_scaffold post title:string body:text
+
+This will barf out the following:
+
+* the model, its blueprint, and associated unit test
+* an admin controller, with all 7 "normal" restful Rails actions, properly namespaced and with correct url_for values for the namespace, with functional tests
+* a front-end controller, with 2 actions ("index" and "show"), with functional tests
+
 
 == Installation
 
