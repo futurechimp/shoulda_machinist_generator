@@ -1,0 +1,13 @@
+<%% @page_title = "Create <%= singular_name.humanize.downcase %>" %>
+<h2>Create <%= singular_name.humanize.downcase %></h2>
+
+<%% form_for(:<%= singular_name %>, :url => admin_<%= plural_name %>_path) do |f| %>
+<%%= f.error_messages %>
+
+<p>Please complete all fields marked <span class="required">*</span></p>
+
+<%%= render :partial => 'form', :locals => {:f => f} %>
+<p>
+<%%= f.submit "Create <%= singular_name.humanize.downcase%>", :class => "create" %>
+</p>
+<%% end %>

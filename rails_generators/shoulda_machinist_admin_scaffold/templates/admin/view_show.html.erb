@@ -1,0 +1,13 @@
+<%% @page_title = "Show <%= singular_name.humanize.downcase %>" %>
+<h2>Show <%= singular_name %> - <%%= link_to 'Edit <%= singular_name.humanize.downcase %>', edit_admin_<%= singular_name %>_path(@<%= singular_name %>) %></h2>
+
+<% for attribute in attributes -%>
+<p>
+<strong><%= attribute.column.human_name %>:</strong>
+<%%=h @<%= singular_name %>.<%= attribute.name %> %>
+</p>
+<% end -%>
+
+<p>
+<%%= link_to 'Back to <%= plural_name %>', admin_<%= plural_name %>_url %>
+</p>

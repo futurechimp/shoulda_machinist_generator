@@ -1,0 +1,29 @@
+<%% @page_title = "Manage <%= plural_name.humanize %>" %>
+<h2>Manage <%= plural_name.humanize %> - <%%= link_to 'Create <%= singular_name.humanize %>', new_admin_<%= singular_name %>_path %></h2>
+<!-- <p class="create-button"><%%= link_to '<span class="left"></span><span class="middle">Create CV</span><span class="right"></span>', new_admin_<%= singular_name %>_path %></p> -->
+
+<table class="grid" cellpadding="0" cellspacing="0">
+<tr>
+<% for attribute in attributes -%>
+<th><%= attribute.column.human_name %></th>
+<% end -%>
+<th>Created on</th>
+<th>Update on</th>
+<th>&nbsp;</th>
+<th>&nbsp;</th>
+<th>&nbsp;</th>
+</tr>
+
+<%% for <%= singular_name %> in @<%= plural_name %> %>
+<tr class="<%%= cycle("row", "alt-row") %>">
+<% for attribute in attributes -%>
+<td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
+<% end -%>
+<td><%%=h long_date_with_time(<%= singular_name %>.created_at) %></td>
+<td><%%=h long_date_with_time(<%= singular_name %>.updated_at) %></td>
+<td class="show"><%%= link_to 'View', admin_<%= singular_name %>_path(<%= singular_name %>), :title => "View <%= singular_name %>" %></td>
+<td class="edit"><%%= link_to 'Edit', edit_admin_<%= singular_name %>_path(<%= singular_name %>), :title => "Edit <%= singular_name %>" %></td>
+<td class="delete"><%%= link_to 'Delete', admin_<%= singular_name %>_path(<%= singular_name %>), :title => "Delete <%= singular_name %>", :confirm => 'Are you sure you want to delete this <%= singular_name %>?', :method => :delete %></td>
+</tr>
+<%% end %>
+</table>

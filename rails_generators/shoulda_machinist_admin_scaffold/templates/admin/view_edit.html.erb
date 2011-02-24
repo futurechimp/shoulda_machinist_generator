@@ -1,0 +1,14 @@
+<%% @page_title = "Edit <%= singular_name.humanize.downcase %>" %>
+<h2>Edit <%= singular_name.humanize.downcase %> - <%%= link_to 'Show <%= singular_name.humanize.downcase %>', admin_<%= singular_name %>_path(@<%= singular_name %>) %></h2>
+
+<%% form_for(:<%= singular_name %>, :url => admin_<%= singular_name %>_path(@<%= singular_name %>), :html => { :method => :put }) do |f| %>
+<%%= f.error_messages %>
+
+<p>Please complete all fields marked <span class="required">*</span></p>
+
+<%%= render :partial => 'form', :locals => {:f => f} %>
+  
+<p>
+<%%= f.submit "Update <%= singular_name.humanize.downcase %>", :class => "create" %>
+</p>
+<%% end %>
