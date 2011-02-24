@@ -1,6 +1,11 @@
 <%% @page_title = "Manage <%= plural_name.humanize %>" %>
-<h2>Manage <%= plural_name.humanize %> - <%%= link_to 'Create <%= singular_name.humanize %>', new_admin_<%= singular_name %>_path %></h2>
-<!-- <p class="create-button"><%%= link_to '<span class="left"></span><span class="middle">Create CV</span><span class="right"></span>', new_admin_<%= singular_name %>_path %></p> -->
+<h2>
+  Manage <%= plural_name.humanize %>
+</h2>
+
+<p class="create-button">
+  <%%= link_to '<span class="left"></span><span class="middle">Create <%= singular_name.humanize %></span><span class="right"></span>', new_admin_<%= singular_name %>_path %>
+</p>
 
 <table class="grid" cellpadding="0" cellspacing="0">
 <tr>
@@ -27,3 +32,4 @@
 </tr>
 <%% end %>
 </table>
+
