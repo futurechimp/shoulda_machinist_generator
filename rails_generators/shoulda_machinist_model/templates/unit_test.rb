@@ -5,3 +5,4 @@ class <%= class_name %>Test < ActiveSupport::TestCase
   should_have_db_column :<%= attribute.name %>
 <% end -%>
 end
+
