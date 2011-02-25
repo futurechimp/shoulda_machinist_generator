@@ -2,7 +2,7 @@
 
 class <%= class_name %>Test < ActiveSupport::TestCase
 
-  context "The #{class_name} model" do
+  context "The <%= class_name %> model" do
 
   	setup do
   		@<%= file_name %> = <%= class_name %>.make
