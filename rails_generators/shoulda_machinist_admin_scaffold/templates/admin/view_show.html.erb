@@ -1,13 +1,17 @@
-<%% @page_title = "Show <%= singular_name.humanize.downcase %>" %>
-<h2>Show <%= singular_name %> - <%%= link_to 'Edit <%= singular_name.humanize.downcase %>', edit_admin_<%= singular_name %>_path(@<%= singular_name %>) %></h2>
+<%% @page_title = "Show <%= singular_name.humanize %>" %>
+
+<h2>Show <%= singular_name %></h2>
+
+<p class="create-button">
+  <%%= link_to '<span class="left"></span><span class="middle">Back to <%= plural_name %></span><span class="right"></span>', 
+    admin_<%= plural_name %>_url %>
+  <%%= link_to '<span class="left"></span><span class="middle">Edit <%= singular_name.humanize %></span><span class="right"></span>', 
+    edit_admin_<%= singular_name %>_path(@<%= singular_name %>) %>
+</p>
 
 <% for attribute in attributes -%>
 <p>
-<strong><%= attribute.column.human_name %>:</strong>
-<%%=h @<%= singular_name %>.<%= attribute.name %> %>
+  <strong><%= attribute.column.human_name %>:</strong>
+  <%%=h @<%= singular_name %>.<%= attribute.name %> %>
 </p>
 <% end -%>
-
-<p>
-<%%= link_to 'Back to <%= plural_name %>', admin_<%= plural_name %>_url %>
-</p>

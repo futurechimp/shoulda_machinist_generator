@@ -1,9 +1,10 @@
-<h1>Show <%= singular_name.humanize.downcase %></h1>
+<h1>Show <%= singular_name.humanize %></h1>
+
 <% for attribute in attributes -%>
 <p>
-<strong><%= attribute.column.human_name %>:</strong>
-<%%=h @<%= singular_name %>.<%= attribute.name %> %>
+  <strong><%= attribute.column.human_name %>:</strong>
+  <%%=h @<%= singular_name %>.<%= attribute.name %> %>
 </p>
 <% end -%>
 
-<p><%%= link_to 'Back to <%= plural_name.humanize.downcase %>', <%= plural_name %>_url %></p>
+<p><%%= link_to 'Back to <%= plural_name.humanize %>', <%= plural_name %>_url %></p>

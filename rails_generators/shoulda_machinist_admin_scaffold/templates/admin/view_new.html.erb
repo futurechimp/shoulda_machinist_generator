@@ -1,13 +1,20 @@
-<%% @page_title = "Create <%= singular_name.humanize.downcase %>" %>
-<h2>Create <%= singular_name.humanize.downcase %></h2>
+<%% @page_title = "Create <%= singular_name.humanize %>" %>
 
-<%% form_for(:<%= singular_name %>, :url => admin_<%= plural_name %>_path) do |f| %>
+<h2>Create <%= singular_name.humanize %></h2>
+
+<p class="create-button">
+  <%%= link_to '<span class="left"></span><span class="middle">Back to <%= plural_name %></span><span class="right"></span>', 
+    admin_<%= plural_name %>_url %>
+</p>
+
+<%% form_for(@<%= singular_name %>, :url => admin_<%= plural_name %>_path) do |f| %>
+
 <%%= f.error_messages %>
 
 <p>Please complete all fields marked <span class="required">*</span></p>
 
 <%%= render :partial => 'form', :locals => {:f => f} %>
 <p>
-<%%= f.submit "Create <%= singular_name.humanize.downcase%>", :class => "create" %>
+  <%%= f.submit "Create <%= singular_name.humanize%>", :class => "create" %>
 </p>
 <%% end %>

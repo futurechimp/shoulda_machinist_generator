@@ -1,7 +1,16 @@
-<%% @page_title = "Edit <%= singular_name.humanize.downcase %>" %>
-<h2>Edit <%= singular_name.humanize.downcase %> - <%%= link_to 'Show <%= singular_name.humanize.downcase %>', admin_<%= singular_name %>_path(@<%= singular_name %>) %></h2>
+<%% @page_title = "Edit <%= singular_name.humanize %>" %>
 
-<%% form_for(:<%= singular_name %>, :url => admin_<%= singular_name %>_path(@<%= singular_name %>), :html => { :method => :put }) do |f| %>
+<h2>Edit <%= singular_name.humanize %></h2>
+
+<p class="create-button">
+  <%%= link_to '<span class="left"></span><span class="middle">Back to <%= plural_name %></span><span class="right"></span>', 
+    admin_<%= plural_name %>_url %>
+  <%%= link_to '<span class="left"></span><span class="middle">Show <%= singular_name.humanize %></span><span class="right"></span>', 
+    admin_<%= singular_name %>_path(@<%= singular_name %>) %>
+</p>
+
+<%% form_for(@<%= singular_name %>, :url => admin_<%= singular_name %>_path(@<%= singular_name %>), :html => { :method => :put }) do |f| %>
+
 <%%= f.error_messages %>
 
 <p>Please complete all fields marked <span class="required">*</span></p>
@@ -9,6 +18,7 @@
 <%%= render :partial => 'form', :locals => {:f => f} %>
   
 <p>
-<%%= f.submit "Update <%= singular_name.humanize.downcase %>", :class => "create" %>
+  <%%= f.submit "Update <%= singular_name.humanize %>", :class => "create" %>
 </p>
+
 <%% end %>
